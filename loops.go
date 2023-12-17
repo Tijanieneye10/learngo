@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+// variables
+
+func main(){
+	for i := 0; i < 10; i++ {
+		if i%2 == 0 {
+			continue
+		}
+		fmt.Println(i)
+	}
+
+	// count := 10
+	// // While loop
+	// for count > 5 {}
+}
+
