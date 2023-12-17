@@ -6,6 +6,7 @@ type Passenger struct {
 	Name string
 	TicketNumber int
 	Boarded bool
+	isCheck bool
 }
 
 type Bus struct {
@@ -37,4 +38,11 @@ func main() {
 	if(hassan.Boarded){
 		fmt.Println("Yeah Hassan has already boarded the bus")
 	}
+
+	bus := Bus{hassan}
+
+	bus.FrontSeat.Name = "Friend"
+ 
+
+	fmt.Println(bus.FrontSeat.isCheck)
 }
