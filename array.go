@@ -37,3 +37,4 @@ func checkIsClean(rooms [4]Rooms){
 		}
 	}
 }
+
