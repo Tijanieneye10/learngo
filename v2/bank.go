@@ -1,10 +1,30 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
+
+const accountBalanceFile = "balance.txt"
+
+func writeBalanceToFile(balance float64) {
+	balanceText := fmt.Sprint(balance)
+	os.WriteFile("balance.txt", []byte(balanceText), 0644)
+}
+func getBalanceFromFile() float64 {
+	data, _ := os.ReadFile(accountBalanceFile)
+	balanceText := string(data)
+	balance, _ := strconv.ParseFloat(balanceText, 64)
+	return balance
+
+}
 
 func main() {
 
-	accountBalance := 1000.0
+	fmt.Println("Here is the balance", getBalanceFromFile())
+
+	accountBalance := getBalanceFromFile()
 	fmt.Println("Welcome to Brainy Bank")
 
 	for {
@@ -30,7 +50,7 @@ func main() {
 
 			depositAmount := 0.0
 
-			fmt.Println("How much to deposit? ")
+			fmt.Print("How much to deposit? ")
 
 			fmt.Scan(&depositAmount)
 
@@ -40,14 +60,16 @@ func main() {
 			}
 			accountBalance += depositAmount
 			fmt.Println("Your account balance is now", accountBalance)
+			writeBalanceToFile(accountBalance)
 
 		case 3:
 
-			fmt.Println("How much to withdraw? ")
+			fmt.Print("How much to withdraw? ")
 			withdrawalAmount := 0.0
 			fmt.Scan(&withdrawalAmount)
 
 			accountBalance -= withdrawalAmount
+			writeBalanceToFile(accountBalance)
 			fmt.Println("Your new balance is", accountBalance)
 			continue
 		default:
