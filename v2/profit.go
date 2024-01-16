@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main(){
+func profit() {
 
 	var revenue float64
 	var expenses float64
@@ -15,10 +15,9 @@ func main(){
 	fmt.Print("What is your expenses? ")
 	fmt.Scan(&expenses)
 
-
 	profit := revenue - expenses
 
-	profitMargin := (profit/revenue) * PERCENTAGE
+	profitMargin := (profit / revenue) * PERCENTAGE
 
 	formattedProfitMargin := fmt.Sprintf("%.2f", profitMargin)
 

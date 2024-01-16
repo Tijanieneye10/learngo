@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func errorFn() {
 	result, err := passNumber(5.2)
 	if err != nil {
 		fmt.Println(err)

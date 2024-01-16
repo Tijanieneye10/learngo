@@ -2,8 +2,7 @@ package main
 
 import "fmt"
 
-
-func main() {
+func playFn() {
 	add, multiply := multiplyAndAddition(5, 10)
 
 	fmt.Println(add, multiply)
@@ -17,7 +16,7 @@ func main() {
 	}
 }
 
-func multiplyAndAddition(first, second int) (addition, multiply int){
+func multiplyAndAddition(first, second int) (addition, multiply int) {
 	addition = first + second
 	multiply = first * second
 	return
