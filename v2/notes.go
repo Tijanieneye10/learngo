@@ -18,6 +18,14 @@ func main() {
 	}
 
 	noteDetails.Display()
+	err = noteDetails.Save()
+
+	if err != nil {
+		fmt.Println("Saving the note failed...")
+		return
+	}
+
+	fmt.Println("Note saved successfully")
 
 }
 
@@ -31,8 +39,6 @@ func getNoteData() (string, string) {
 func getUserInput(prompt string) string {
 
 	fmt.Print(prompt)
-	//var value string
-	//fmt.Scanln(&value)
 
 	reader := bufio.NewReader(os.Stdin)
 
