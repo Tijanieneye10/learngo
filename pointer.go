@@ -17,4 +17,5 @@ func main() {
 
 func checkAge(age *int) {
 	fmt.Println("Check age is", *age)
+	*age = *age - 4
 }
