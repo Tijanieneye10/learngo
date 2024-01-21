@@ -9,22 +9,6 @@ import (
 	todo2 "v2/todo"
 )
 
-type saver interface {
-	Save() error
-}
-
-// Implementing interface
-func saveData(data saver) error {
-	err := data.Save()
-	if err != nil {
-		fmt.Println("Saving the note failed...")
-		return err
-	}
-
-	return nil
-
-}
-
 func main() {
 
 	title, content := getNoteData()
@@ -39,7 +23,7 @@ func main() {
 	}
 
 	todo.Display()
-	err = saveData(todo)
+	err = todo.Save()
 
 	if err != nil {
 		fmt.Println(err)
@@ -52,7 +36,7 @@ func main() {
 	}
 
 	noteDetails.Display()
-	err = saveData(noteDetails)
+	err = noteDetails.Save()
 
 	if err != nil {
 		fmt.Println("Saving the note failed...")
