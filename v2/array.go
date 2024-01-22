@@ -12,4 +12,14 @@ func main() {
 
 	//Start from 2 to the last element
 	fmt.Println(prices[2:])
+
+	names := []string{"John", "Doe", "Example", "Test"}
+
+	fmt.Println(len(prices), cap(prices))
+	fmt.Println(len(names), cap(names))
+
+	numbers := []int{3, 4, 5}
+	appendedValue := append(numbers, 6)
+
+	fmt.Println(appendedValue)
 }
