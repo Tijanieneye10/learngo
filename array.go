@@ -26,15 +26,14 @@ type Rooms struct {
 	cleaned bool
 }
 
-func checkIsClean(rooms [4]Rooms){
-	for i := 0; i< len(rooms); i++ {
+func checkIsClean(rooms [4]Rooms) {
+	for i := 0; i < len(rooms); i++ {
 		room := rooms[i]
 
-		if(room.cleaned) {
+		if room.cleaned {
 			fmt.Println("The room is cleaned")
 		} else {
 			fmt.Println("The room is not cleaned")
 		}
 	}
 }
-

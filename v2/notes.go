@@ -13,10 +13,6 @@ type saver interface {
 	Save() error
 }
 
-type displayer interface {
-	Display()
-}
-
 type outputtable interface {
 	Save() error
 	Display()
