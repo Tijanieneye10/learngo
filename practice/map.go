@@ -54,4 +54,17 @@ func main() {
 
 	ratings.output()
 
+	for index, value := range ratings {
+		fmt.Println(index, value)
+	}
+
+	var name text = "My name is Tijani"
+	name.log()
+
+}
+
+type text string
+
+func (s text) log() {
+	fmt.Println(s)
 }

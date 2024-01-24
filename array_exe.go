@@ -12,7 +12,7 @@ func calculateProduct(list [4]Product) {
 	var totalCost, totalItem int
 
 	for i := 0; i < len(list); i++ {
-		
+
 		item := list[i]
 
 		totalCost += item.price
@@ -23,7 +23,7 @@ func calculateProduct(list [4]Product) {
 	}
 
 	fmt.Println("Total Cost: ", totalCost)
-		fmt.Println("Total Item: ", totalItem)
+	fmt.Println("Total Item: ", totalItem)
 }
 
 func main() {
@@ -34,4 +34,20 @@ func main() {
 	}
 
 	calculateProduct(items)
+
+	// Array
+	names := [3]string{"John", "Doe", "Taylor"}
+	fmt.Println(names)
+
+	//Slice
+	anotherNames := []string{"John", "Doe", "Taylor"}
+	fmt.Println(anotherNames)
+
+	// Make Function
+	secondNames := make([]string, 3, 5)
+
+	secondNames = []string{"John", "Doe", "Taylor"}
+
+	fmt.Println(secondNames)
+
 }
