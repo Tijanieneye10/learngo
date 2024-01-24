@@ -61,3 +61,5 @@ func double(number int) int {
 func returnFnAsValue() doubleFn {
 	return double
 }
+
+// Anonymous function
